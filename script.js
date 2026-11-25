@@ -58,8 +58,6 @@ const currentTimeEl = document.getElementById("currentTime");
 const totalTimeEl = document.getElementById("totalTime");
 const volumeSlider = document.getElementById("volumeSlider");
 const muteBtn = document.getElementById("muteBtn");
-const volumeIcon = document.getElementById("volumeIcon");
-const muteIcon = document.getElementById("muteIcon");
 const autoplayToggle = document.getElementById("autoplayToggle");
 const playlistEl = document.getElementById("playlist");
 const miniPlayer = document.getElementById("miniPlayer");
@@ -649,8 +647,6 @@ progressBar.addEventListener("keydown", (e) => {
 audio.volume = 0.8;
 function syncVolumeIcon() {
   const muted = audio.muted || audio.volume === 0;
-  volumeIcon.toggleAttribute("hidden", muted);
-  muteIcon.toggleAttribute("hidden", !muted);
   muteBtn.setAttribute("aria-label", muted ? "Unmute" : "Mute");
 }
 volumeSlider.addEventListener("input", () => {
